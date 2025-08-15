@@ -21,3 +21,6 @@ Push an existing repository from local to github using the command line
 git remote add origin 
 git branch -M main
 git push -u origin main
+
+adding new commands 
+new changes
