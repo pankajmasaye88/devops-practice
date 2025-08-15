@@ -1,0 +1,8 @@
+files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$')
+
+flake8 $files
+
+if git grep -q "password\|secret_key\|API_KEY" $(git diff --cached --name-only); then
+    echo "Sensitive data found. Please remove before committing."
+    exit 1
+fi
